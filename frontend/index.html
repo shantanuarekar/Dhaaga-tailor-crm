@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dhaaga — Tailor's Register</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧵</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ---------- Login screen ---------- -->
+<div id="loginScreen" class="login-screen">
+  <div class="login-card">
+    <div class="brand login-brand">
+      <span class="brand-mark">🧵</span>
+      <span class="brand-name">Dhaaga</span>
+    </div>
+    <p class="login-tag" data-i18n="login.tag">The tailor's register, digitised</p>
+
+    <label data-i18n="login.username">Username</label>
+    <input type="text" id="loginUsername" autocomplete="username" />
+    <label data-i18n="login.password">Password</label>
+    <input type="password" id="loginPassword" autocomplete="current-password" />
+
+    <button class="btn btn-accent btn-block" id="loginSubmit" style="margin-top:16px;" data-i18n="login.submit">Log in</button>
+    <div id="loginError" class="login-error"></div>
+
+    <div class="login-lang">
+      <button class="lang-chip" data-lang="en">EN</button>
+      <button class="lang-chip" data-lang="hi">हिंदी</button>
+      <button class="lang-chip" data-lang="mr">मराठी</button>
+    </div>
+  </div>
+</div>
+
+<!-- ---------- Main app shell ---------- -->
+<div id="app" class="app-shell" hidden>
+
+  <!-- Desktop sidebar -->
+  <aside class="sidebar">
+    <div class="brand">
+      <span class="brand-mark">🧵</span>
+      <span class="brand-name">Dhaaga</span>
+    </div>
+    <div class="brand-tag" data-i18n="app.tag">the tailor's register, digitised</div>
+
+    <nav class="side-nav">
+      <button class="side-link active" data-tab="home"><span class="tab-icon">⌂</span><span data-i18n="tab.home">Home</span></button>
+      <button class="side-link" data-tab="new-order"><span class="tab-icon">+</span><span data-i18n="tab.newOrder">New Order</span></button>
+      <button class="side-link" data-tab="orders"><span class="tab-icon">▤</span><span data-i18n="tab.orders">Orders</span></button>
+      <button class="side-link" data-tab="followups"><span class="tab-icon">↻</span><span data-i18n="tab.followups">Follow-ups</span></button>
+      <button class="side-link" data-tab="profile"><span class="tab-icon">◐</span><span data-i18n="tab.profile">Profile</span></button>
+    </nav>
+
+    <div class="side-lang">
+      <button class="lang-chip" data-lang="en">EN</button>
+      <button class="lang-chip" data-lang="hi">हिंदी</button>
+      <button class="lang-chip" data-lang="mr">मराठी</button>
+    </div>
+  </aside>
+
+  <div class="main-col">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">🧵</span>
+        <span class="brand-name">Dhaaga</span>
+      </div>
+      <div class="brand-tag" data-i18n="app.tag">the tailor's register, digitised</div>
+      <button class="logout-btn" id="logoutBtn" data-i18n="app.logout">Log out</button>
+    </header>
+
+    <main id="view" class="view"></main>
+
+    <nav class="tabbar">
+      <button class="tab active" data-tab="home">
+        <span class="tab-icon">⌂</span><span data-i18n="tab.home">Home</span>
+      </button>
+      <button class="tab" data-tab="new-order">
+        <span class="tab-icon">+</span><span data-i18n="tab.newOrder">New Order</span>
+      </button>
+      <button class="tab" data-tab="orders">
+        <span class="tab-icon">▤</span><span data-i18n="tab.orders">Orders</span>
+      </button>
+      <button class="tab" data-tab="followups">
+        <span class="tab-icon">↻</span><span data-i18n="tab.followups">Follow-ups</span>
+      </button>
+      <button class="tab" data-tab="profile">
+        <span class="tab-icon">◐</span><span data-i18n="tab.profile">Profile</span>
+      </button>
+    </nav>
+  </div>
+
+</div>
+
+<div id="toast" class="toast"></div>
+
+<!-- Loaded in dependency order — each module builds on the ones before it. -->
+<script src="js/i18n.js"></script>
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/home.js"></script>
+<script src="js/new_order.js"></script>
+<script src="js/orders.js"></script>
+<script src="js/followups.js"></script>
+<script src="js/profile.js"></script>
+<script src="js/init.js"></script>
+</body>
+</html>
